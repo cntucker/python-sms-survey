@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numbers</title>
+    <link href="https://d3l0ifulerbodr.cloudfront.net/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<header>
+    <div id="logo-wrap">
+        <a href="/" id="logo"><img src="http://dev.bandwidth.com/design-system/source/images/bandwidth-logo-blue.png" alt="Bandwidth logo" /></a>
+    </div>
+</header>
+<h5>Send Survey</h5>
+<form name="myForm">
+    <div id="dynamicInput" class="form-input clearfix">
+        <label for="input-number">Phone Number 1</label>
+        <input type="text" name="myInputs[]" id="input-number">
+        <div class="help">Format: +1XXXXXXXXXX</div>
+    </div>
+    <button class="button button--secondary button--small button--light button--hover-go button--right" onclick="addInput('dynamicInput', 'Phone Number');" type="button">Add Row</button>
+    <script src="/static/js/addInput.js" language="Javascript" type="text/javascript"></script>
+
+    <button class="button button--submit button--hover-go button--right" type="submit" id="formtest" onclick="numbersSubmit()"> Submit </button>
+
+</form>
+<script src="/static/js/numbersSubmit.js" language="Javascript" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Surveys</title>
+    <link href="https://d3l0ifulerbodr.cloudfront.net/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<header>
+    <div id="logo-wrap">
+        <a href="/" id="logo"><img src="http://dev.bandwidth.com/design-system/source/images/bandwidth-logo-blue.png" alt="Bandwidth logo" /></a>
+    </div>
+</header>
+<h5>Surveys</h5>
+<div class="table-wrap">
+<table cellpadding="0" cellspacing="0" class="small" id="survey-table">
+    <tr>
+        <th>Actions</th>
+        <th>Survey ID</th>
+        <th>Survey Name</th>
+        <th>Survey Number</th>
+    </tr>
+</table>
+</div>
+<br/>
+<br/>
+<h5>Create New Survey</h5>
+<form name="myForm">
+    <div class="form-input clearfix required">
+        <label for="survey-name">Survey Name</label>
+        <input type="text" value="" name="s-name" id="survey-name" required />
+    </div>
+    <div class="form-input clearfix">
+        <label for="phone">Bandwidth Phone Number</label>
+        <input type="text" value="" id="phone" />
+        <div class="help">Format: +1XXXXXXXXXX. If this is left blank, a new number will be added to your account.</div>
+    </div>
+    <div id="dynamicInput" class="form-input clearfix">
+        <label for="input-questions">Question 1</label>
+        <input type="text" name="myInputs[]" id="input-questions">
+    </div>
+    <button class="button button--secondary button--small button--light button--hover-go button--right" onclick="addInput('dynamicInput', 'Question');" type="button">Add Row</button>
+    <script src="/static/js/addInput.js" language="Javascript" type="text/javascript"></script>
+
+    <button class="button button--submit button--hover-go button--right" type="submit" id="formtest" onclick="surveySubmit()"> Submit </button>
+
+</form>
+<script src="/static/js/surveySubmit.js" language="Javascript" type="text/javascript"></script>
+<script src="/static/js/displaySurveys.js" language="Javascript" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Questions</title>
+    <link href="https://d3l0ifulerbodr.cloudfront.net/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<header>
+    <div id="logo-wrap">
+        <a href="/" id="logo"><img src="http://dev.bandwidth.com/design-system/source/images/bandwidth-logo-blue.png" alt="Bandwidth logo" /></a>
+    </div>
+</header>
+<div id="survey-info"></div>
+<div class="tabbed horizontal">
+    <div class="tabs">
+        <div class="tab t1 active">Questions</div>
+        <div class="tab t2">Responses</div>
+    </div>
+    <div class="contents">
+        <div class="tab-drawer t1 active">Tab 1</div>
+        <div class="content c1 active">
+            <div class="table-wrap">
+            <table cellpadding="0" cellspacing="0" class="small" id="question-table">
+                <tr>
+                    <th>Question ID</th>
+                    <th>Question Text</th>
+                    <th>Index</th>
+                </tr>
+            </table>
+            </div>
+        </div>
+        <div class="tab-drawer t2">Super duper long tab number 2</div>
+        <div class="content c2">
+            <div class="table-wrap" id="tab2"></div>
+        </div>
+    </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<h5>Add Question</h5>
+<form name="myForm">
+    <div class="form-input clearfix required">
+        <label for="question-text">Question Text</label>
+        <input type="text" value="" name="s-name" id="question-text" required />
+    </div>
+    <div class="form-input clearfix required">
+        <label for="index">Question Index</label>
+        <input type="text" value="" id="index" />
+    </div>
+    <div class="alert alert--small alert--general"><p>Surveys will not send without a starting index (index 0).</p></div>
+    <br />
+    <br />
+    <button class="button button--submit button--hover-go button--right" type="submit" id="formtest" onclick="questionSubmit()"> Submit </button>
+
+</form>
+
+<script src="/static/js/questionSubmit.js" language="Javascript" type="text/javascript"></script>
+<script src="/static/js/displayQuestions.js" language="Javascript" type="text/javascript"></script>
+<script src="/static/js/tabs.js" language="Javascript" type="text/javascript"></script>
+<br />
+<br />
+</body>
+</html>
