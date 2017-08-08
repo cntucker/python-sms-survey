@@ -42,20 +42,10 @@ def get_survey(survey_id):
 @app.route('/api/surveys', methods=['GET', 'POST'])
 def create_survey():
     if request.method == 'POST':
-        json = request.get_json()
-        logging.info(json)
-        survey_name = json['surveyName']
-        if 'surveyNumber' in json and json['surveyNumber']:
-            survey_number = json['surveyNumber']
-        else:
-            survey_number = SurveySender.create_bandwidth_app()
-        survey_id = db.save_survey_to_database(survey_name, survey_number)
-        if 'questions' in json:
-            SurveySender.parse_questions(json['questions'], survey_id)
-        return str(survey_id)
-    elif request.method == 'GET':
+        logging.info(request.get_json())
+        return SurveySender.create_survey(request.get_json())
+    else:
         return SurveySender.get_all_surveys()
-    return None
 
 
 @app.route('/api/surveys/<int:survey_id>/phoneNumbers', methods=['POST'])
@@ -68,8 +58,8 @@ def send_to_numbers(survey_id=0):
 @app.route('/api/surveys/<int:survey_id>/questions', methods=['POST'])
 def add_questions(survey_id=0):
     logging.info(request.get_json())
-    SurveySender.parse_questions(request.get_json(), survey_id)
-    return ""
+    db.save_questions(survey_id=survey_id, questions=request.get_json())
+    return "Questions Added"
 
 
 if __name__ == '__main__':

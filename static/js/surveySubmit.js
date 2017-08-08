@@ -1,4 +1,4 @@
-function formSubmit() {
+function surveySubmit() {
 var questions = document.forms[0].elements["myInputs[]"];
 var phone = document.getElementById("phone").value;
 var s_name = document.getElementById("survey-name").value ;
